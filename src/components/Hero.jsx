@@ -55,15 +55,15 @@ const Hero = () => {
           </div>
 
           <h1 className="flex flex-col gap-2 mb-10 [@media(max-height:800px)]:mb-6 [@media(max-height:800px)]:gap-1 leading-none">
-            <span className="hero-text font-sans font-extrabold text-5xl md:text-7xl lg:text-[6rem] [@media(max-height:800px)]:text-4xl [@media(max-height:800px)]:md:text-5xl [@media(max-height:800px)]:lg:text-[4.5rem] text-white tracking-tight transition-all duration-300">
+            <span className="hero-text font-sans font-extrabold text-5xl md:text-7xl lg:text-[6rem] [@media(max-height:800px)]:text-4xl [@media(max-height:800px)]:md:text-5xl [@media(max-height:800px)]:lg:text-[4.5rem] text-white tracking-tight">
               Bridging operations with
             </span>
-            <span className="hero-text font-serif font-medium italic text-6xl md:text-8xl lg:text-[8rem] [@media(max-height:800px)]:text-5xl [@media(max-height:800px)]:md:text-6xl [@media(max-height:800px)]:lg:text-[5.5rem] text-brand-light tracking-tighter ml-0 md:ml-12 drop-shadow-xl transition-all duration-300">
+            <span className="hero-text font-serif font-medium italic text-6xl md:text-8xl lg:text-[8rem] [@media(max-height:800px)]:text-5xl [@media(max-height:800px)]:md:text-6xl [@media(max-height:800px)]:lg:text-[5.5rem] text-brand-light tracking-tighter ml-0 md:ml-12 drop-shadow-xl">
               clinical expertise.
             </span>
           </h1>
 
-          <p className="hero-text font-sans font-light text-xl md:text-2xl [@media(max-height:800px)]:text-lg text-slate-300 max-w-2xl leading-relaxed mb-12 [@media(max-height:800px)]:mb-8 transition-all duration-300">
+          <p className="hero-text font-sans font-light text-xl md:text-2xl [@media(max-height:800px)]:text-lg text-slate-300 max-w-2xl leading-relaxed mb-12 [@media(max-height:800px)]:mb-8">
             Join a network of highly skilled professionals supporting critical healthcare systems in a structured, competitive, and continuous learning environment.
           </p>
 
