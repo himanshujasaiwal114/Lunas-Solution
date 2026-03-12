@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 
 const Hero = () => {
@@ -67,13 +68,13 @@ const Hero = () => {
           </p>
           
           <div className="hero-text flex gap-6">
-            <a 
-              href="#roles" 
+            <Link 
+              to="/roles" 
               className="magnetic-btn relative overflow-hidden bg-brand-red text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(229,36,42,0.3)] border border-brand-red/50 hover:border-brand-red"
             >
               <span className="relative z-10">View Open Positions</span>
               <span className="absolute inset-0 bg-red-600 translate-y-full transition-transform duration-300 ease-in-out hover:translate-y-0 -z-0"></span>
-            </a>
+            </Link>
           </div>
           
         </div>
