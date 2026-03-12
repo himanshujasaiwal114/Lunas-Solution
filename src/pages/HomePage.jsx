@@ -12,7 +12,7 @@ const HomePage = () => {
     <div className="min-h-screen flex flex-col bg-slate-50 font-sans text-slate-800 selection:bg-brand-red selection:text-white">
       <NoiseOverlay />
       <Header />
-      <main className="flex-1">
+      <main className="">
         <Hero />
         <Manifesto />
         <Features />

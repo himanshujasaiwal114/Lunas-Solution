@@ -28,15 +28,15 @@ const Hero = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      className="relative h-[100dvh] w-full flex items-end justify-start overflow-hidden bg-brand-navy"
+      className="relative h-svh w-full flex items-center justify-start overflow-hidden bg-brand-navy"
     >
       {/* Full Bleed Background */}
       <div className="absolute inset-0 z-0">
-        <div 
+        <div
           className="cinematic-bg absolute inset-0 bg-cover bg-center mix-blend-screen opacity-50"
-          style={{ 
+          style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
             backgroundPosition: '50% 30%'
           }}
@@ -45,38 +45,38 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#050A1A] via-brand-navy/80 to-transparent" />
       </div>
 
-      {/* Content pushed to bottom-left third */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 pb-20 md:pb-32 w-full">
+      {/* Content centered, responsive to short screens */}
+      <div className="container mx-auto px-6 md:px-12 z-10 w-full mt-16 md:mt-24 [@media(max-height:800px)]:mt-10 [@media(max-height:650px)]:mt-2">
         <div className="max-w-4xl">
-          
-          <div className="hero-text text-brand-red font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
+
+          <div className="hero-text text-brand-red font-mono text-sm tracking-[0.2em] uppercase flex items-center gap-3 mb-6 [@media(max-height:800px)]:mb-4">
             <span className="w-8 h-[1px] bg-brand-red"></span>
             Specialized Clinical Operations
           </div>
-          
-          <h1 className="flex flex-col gap-2 mb-10 leading-none">
-            <span className="hero-text font-sans font-extrabold text-5xl md:text-7xl lg:text-[6rem] text-white tracking-tight">
+
+          <h1 className="flex flex-col gap-2 mb-10 [@media(max-height:800px)]:mb-6 [@media(max-height:800px)]:gap-1 leading-none">
+            <span className="hero-text font-sans font-extrabold text-5xl md:text-7xl lg:text-[6rem] [@media(max-height:800px)]:text-4xl [@media(max-height:800px)]:md:text-5xl [@media(max-height:800px)]:lg:text-[4.5rem] text-white tracking-tight transition-all duration-300">
               Bridging operations with
             </span>
-            <span className="hero-text font-serif font-medium italic text-6xl md:text-8xl lg:text-[8rem] text-brand-light tracking-tighter ml-0 md:ml-12 drop-shadow-xl">
+            <span className="hero-text font-serif font-medium italic text-6xl md:text-8xl lg:text-[8rem] [@media(max-height:800px)]:text-5xl [@media(max-height:800px)]:md:text-6xl [@media(max-height:800px)]:lg:text-[5.5rem] text-brand-light tracking-tighter ml-0 md:ml-12 drop-shadow-xl transition-all duration-300">
               clinical expertise.
             </span>
           </h1>
-          
-          <p className="hero-text font-sans font-light text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed mb-12">
+
+          <p className="hero-text font-sans font-light text-xl md:text-2xl [@media(max-height:800px)]:text-lg text-slate-300 max-w-2xl leading-relaxed mb-12 [@media(max-height:800px)]:mb-8 transition-all duration-300">
             Join a network of highly skilled professionals supporting critical healthcare systems in a structured, competitive, and continuous learning environment.
           </p>
-          
+
           <div className="hero-text flex gap-6">
-            <Link 
-              to="/roles" 
-              className="magnetic-btn relative overflow-hidden bg-brand-red text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(229,36,42,0.3)] border border-brand-red/50 hover:border-brand-red"
+            <Link
+              to="/roles"
+              className="magnetic-btn relative overflow-hidden bg-brand-red text-white px-8 py-4 [@media(max-height:800px)]:px-6 [@media(max-height:800px)]:py-3 rounded-full font-bold text-lg [@media(max-height:800px)]:text-base shadow-[0_0_30px_rgba(229,36,42,0.3)] border border-brand-red/50 hover:border-brand-red transition-all duration-300"
             >
               <span className="relative z-10">View Open Positions</span>
               <span className="absolute inset-0 bg-red-600 translate-y-full transition-transform duration-300 ease-in-out hover:translate-y-0 -z-0"></span>
             </Link>
           </div>
-          
+
         </div>
       </div>
     </section>
