@@ -66,22 +66,49 @@ const CompanyOverview = () => {
             
             <div className="mt-10 pt-8 border-t border-slate-200">
               <h4 className="font-bold text-brand-navy mb-4 font-sans uppercase tracking-wider text-sm">Our Locations & Setup</h4>
-              <ul className="space-y-4 text-brand-gray">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-brand-red mt-2 shrink-0" />
-                  <div>
-                    <strong className="text-brand-navy block">Alabang, Muntinlupa City, Philippines</strong>
-                    <span className="text-sm">Main operations and administrative office supporting recruitment, training, and healthcare operations services.</span>
+              <div className="grid sm:grid-cols-2 gap-6 mt-6">
+                
+                {/* Alabang Location */}
+                <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123616.48622153574!2d120.94793836338576!3d14.421683416805166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d19bb6df8895%3A0xcbbbff9117f7d3cc!2sAlabang%2C%20Muntinlupa%2C%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="150" 
+                    style={{ border: 0 }} 
+                    allowFullScreen="" 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  <div className="p-4 flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-brand-red md:mt-2 shrink-0 hidden md:block" />
+                    <div>
+                      <strong className="text-brand-navy block text-sm tracking-tight mb-1">Alabang, Muntinlupa City, Philippines</strong>
+                      <span className="text-xs text-brand-gray leading-tight block">Main operations and administrative office supporting recruitment and training.</span>
+                    </div>
                   </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-brand-red mt-2 shrink-0" />
-                  <div>
-                    <strong className="text-brand-navy block">Dumaguete City, Negros Oriental, Philippines</strong>
-                    <span className="text-sm">Operations site supporting healthcare services.</span>
+                </div>
+
+                {/* Dumaguete Location */}
+                <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125746.52086435647!2d123.23075240217036!3d9.309489279510526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33ab6ece1bd91465%3A0x6bfe76ffdf7985cc!2sDumaguete%2C%20Negros%20Oriental%2C%20Philippines!5e0!3m2!1sen!2sus!4v1700000000001!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="150" 
+                    style={{ border: 0 }} 
+                    allowFullScreen="" 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  <div className="p-4 flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-brand-red md:mt-2 shrink-0 hidden md:block" />
+                    <div>
+                      <strong className="text-brand-navy block text-sm tracking-tight mb-1">Dumaguete City, Negros Oriental, Philippines</strong>
+                      <span className="text-xs text-brand-gray leading-tight block">Operations site supporting healthcare services and clinical functions.</span>
+                    </div>
                   </div>
-                </li>
-              </ul>
+                </div>
+
+              </div>
               <div className="mt-6 bg-brand-light p-4 rounded-lg text-sm text-brand-navy border border-brand-blue/10">
                 Lunas Solution currently operates on a <strong>hybrid work setup</strong>. Team members work partly from home and partly from our office locations in the Philippines. Fully remote roles are not currently offered.
               </div>
