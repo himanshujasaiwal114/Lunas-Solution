@@ -102,7 +102,7 @@ const OpenRoles = () => {
           
           <div className="md:col-span-4 sticky top-24">
             <h2 className="text-sm font-bold tracking-wider text-brand-red uppercase mb-3">Join The Team</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Current Openings</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Careers</h3>
             <p className="text-brand-gray mb-8">
               We are actively looking for highly skilled professionals to support our growing network of healthcare partners.
             </p>

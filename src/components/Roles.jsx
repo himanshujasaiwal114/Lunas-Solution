@@ -28,21 +28,24 @@ const Roles = () => {
 
   const roles = [
     {
-      title: "Clinical Abstractor",
-      type: "Remote / Hybrid",
-      features: ["Medical Record Review", "Data Extraction", "Quality Assurance", "HEDIS Measures"],
-      isPopular: false,
-    },
-    {
       title: "Utilization Review Nurse",
-      type: "Priority Role",
-      features: ["Inpatient/Outpatient Review", "InterQual / MCG Guidelines", "Concurrent Review", "Denial Management", "Competitive Comp"],
+      team: "Operations",
+      location: "Dumaguete City, Philippines",
+      features: ["InterQual / MCG Guidelines", "Medical Necessity Review", "Concurrent Review", "Competitive Comp"],
       isPopular: true,
     },
     {
       title: "CDI Specialist",
-      type: "Remote",
-      features: ["Clinical Documentation", "Physician Querying", "DRG Optimization", "Coding Compliance"],
+      team: "Operations",
+      location: "Dumaguete City, Philippines",
+      features: ["Clinical Documentation", "Physician Querying", "DRG Accuracy", "Coding Compliance"],
+      isPopular: false,
+    },
+    {
+      title: "UR Analyst",
+      team: "Operations",
+      location: "Dumaguete City, Philippines",
+      features: ["Data Extraction", "Clinical Reporting", "Compliance Evaluation"],
       isPopular: false,
     }
   ];
@@ -59,7 +62,7 @@ const Roles = () => {
           {roles.map((role, idx) => (
             <div 
               key={idx} 
-              className={`role-card rounded-[2.5rem] p-10 transition-all duration-500 hover:-translate-y-2 \${
+              className={`role-card rounded-[2.5rem] p-10 transition-all duration-500 hover:-translate-y-2 ${
                 role.isPopular 
                   ? 'bg-brand-navy text-white shadow-2xl scale-105 border border-brand-blue/30 relative z-10' 
                   : 'bg-white text-brand-navy shadow-lg border border-slate-100'
@@ -72,8 +75,8 @@ const Roles = () => {
               )}
               
               <div className="mb-8 border-b border-current/10 pb-8">
-                <span className={`font-mono text-sm tracking-widest uppercase mb-4 block \${role.isPopular ? 'text-brand-red' : 'text-brand-blue'}`}>
-                  {role.type}
+                <span className={`font-mono text-xs tracking-widest uppercase mb-4 block ${role.isPopular ? 'text-brand-red' : 'text-brand-blue'}`}>
+                  {role.team} &mdash; {role.location}
                 </span>
                 <h3 className="font-sans font-bold text-3xl leading-tight">
                   {role.title}
@@ -83,8 +86,8 @@ const Roles = () => {
               <ul className="space-y-4 mb-10">
                 {role.features.map((feature, fIdx) => (
                   <li key={fIdx} className="flex items-start gap-3">
-                    <Check className={`w-5 h-5 shrink-0 \${role.isPopular ? 'text-brand-red' : 'text-brand-blue'}`} />
-                    <span className={`text-sm md:text-base \${role.isPopular ? 'text-slate-300' : 'text-slate-600'}`}>
+                    <Check className={`w-5 h-5 shrink-0 ${role.isPopular ? 'text-brand-red' : 'text-brand-blue'}`} />
+                    <span className={`text-sm md:text-base ${role.isPopular ? 'text-slate-300' : 'text-slate-600'}`}>
                       {feature}
                     </span>
                   </li>
@@ -93,7 +96,7 @@ const Roles = () => {
               
               <Link 
                 to="/roles" 
-                className={`magnetic-btn group w-full flex items-center justify-center gap-2 py-4 rounded-full font-bold transition-all \${
+                className={`magnetic-btn group w-full flex items-center justify-center gap-2 py-4 rounded-full font-bold transition-all ${
                   role.isPopular 
                     ? 'bg-brand-red hover:bg-red-600 text-white shadow-lg shadow-brand-red/25' 
                     : 'bg-slate-100 hover:bg-slate-200 text-brand-navy'

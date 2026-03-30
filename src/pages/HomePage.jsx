@@ -1,8 +1,9 @@
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Manifesto from '../components/Manifesto';
-import Features from '../components/Features';
-import Protocol from '../components/Protocol';
+import CompanyOverview from '../components/CompanyOverview';
+import CoreValues from '../components/CoreValues';
+import CultureTeam from '../components/CultureTeam';
+import Benefits from '../components/Benefits';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 import NoiseOverlay from '../components/NoiseOverlay';
@@ -14,9 +15,10 @@ const HomePage = () => {
       <Header />
       <main className="">
         <Hero />
-        <Manifesto />
-        <Features />
-        <Protocol />
+        <CompanyOverview />
+        <CoreValues />
+        <CultureTeam />
+        <Benefits />
         <Testimonials />
       </main>
       <Footer />

@@ -1,47 +1,10 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
 
 const Manifesto = () => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      // Background parallax
-      gsap.fromTo('.manifesto-bg', 
-        { y: -50 },
-        { 
-          y: 50, 
-          ease: 'none',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-          }
-        }
-      );
-
-      // Text reveal
-      gsap.from('.manifesto-text', {
-        y: 40,
-        opacity: 0,
-        duration: 1.5,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 60%',
-        }
-      });
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
+  // Removed heavy scroll-based parallax animations for a more straightforward layout
 
   return (
-    <section id="overview" ref={containerRef} className="relative py-40 bg-brand-navy overflow-hidden flex items-center min-h-[80vh]">
+    <section id="overview" className="relative py-40 bg-brand-navy overflow-hidden flex items-center min-h-[80vh]">
       {/* Texture Background */}
       <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay pointer-events-none">
         <div 
@@ -68,7 +31,7 @@ const Manifesto = () => {
         
         <div className="manifesto-text mt-16 max-w-2xl mx-auto text-slate-300 font-light text-lg md:text-xl leading-relaxed">
           <p>
-            Bridging healthcare with expertise isn't just a tagline. It's a commitment to precision. We empower our professionals with continuous learning, competitive structures, and exact deployment where their clinical skills make the maximum impact.
+            Bridging health with expertise. We assist healthcare providers in managing complex administrative and documentation demands by combining strong clinical knowledge with structured operational processes.
           </p>
         </div>
       </div>

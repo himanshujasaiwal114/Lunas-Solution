@@ -43,14 +43,14 @@ const CompanyOverview = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
           <div className="overview-text order-2 md:order-1">
-            <h2 className="text-sm font-bold tracking-wider text-brand-red uppercase mb-3">
-              About Lunas Solution
-            </h2>
-            <h3 className="text-3xl md:text-5xl font-bold text-brand-navy leading-tight mb-8">
-              Supporting Healthcare Partners with Specialized Needs
-            </h3>
+            <div className="mb-10 relative">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-extrabold text-brand-navy leading-tight tracking-tight">
+                About Lunas Solution
+              </h2>
+              <div className="absolute -bottom-5 left-0 w-20 h-1.5 bg-brand-red rounded-full"></div>
+            </div>
             
-            <div className="space-y-6 text-brand-gray text-lg leading-relaxed">
+            <div className="space-y-6 text-brand-gray text-lg leading-relaxed mt-10">
               <p>
                 Lunas Solution is a healthcare services company that supports healthcare organizations through specialized clinical and operational services. The company works with highly skilled healthcare professionals to deliver solutions such as utilization review, clinical documentation improvement (CDI), and other healthcare support functions that help facilities improve efficiency, maintain compliance, and ensure the appropriate use of medical resources.
               </p>
@@ -58,19 +58,30 @@ const CompanyOverview = () => {
                 Built on the principle of bridging health with expertise, Lunas Solution combines clinical knowledge with structured operational processes to assist healthcare providers in managing complex administrative and documentation demands.
               </p>
               <p>
-                With a growing network of healthcare professionals and an expanding portfolio of services, Lunas Solution continues to strengthen its role as a reliable partner for healthcare organizations.
+                Now with a growing network of healthcare professionals and an expanding portfolio of services, Lunas Solution continues to strengthen its role as a reliable partner for healthcare organizations.
               </p>
             </div>
             
-            <div className="mt-10 flex gap-4">
-              <div className="flex flex-col">
-                <span className="text-4xl font-bold text-brand-blue mb-1">100+</span>
-                <span className="text-sm font-medium text-slate-500 uppercase">Healthcare Pros</span>
-              </div>
-              <div className="w-px bg-slate-200"></div>
-              <div className="flex flex-col">
-                <span className="text-4xl font-bold text-brand-blue mb-1">2</span>
-                <span className="text-sm font-medium text-slate-500 uppercase">Office Locations</span>
+            <div className="mt-10 pt-8 border-t border-slate-200">
+              <h4 className="font-bold text-brand-navy mb-4 font-sans uppercase tracking-wider text-sm">Our Locations & Setup</h4>
+              <ul className="space-y-4 text-brand-gray">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-brand-red mt-2 shrink-0" />
+                  <div>
+                    <strong className="text-brand-navy block">Alabang, Muntinlupa City, Philippines</strong>
+                    <span className="text-sm">Main operations and administrative office supporting recruitment, training, and healthcare operations services.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-brand-red mt-2 shrink-0" />
+                  <div>
+                    <strong className="text-brand-navy block">Dumaguete City, Negros Oriental, Philippines</strong>
+                    <span className="text-sm">Operations site supporting healthcare services.</span>
+                  </div>
+                </li>
+              </ul>
+              <div className="mt-6 bg-brand-light p-4 rounded-lg text-sm text-brand-navy border border-brand-blue/10">
+                Lunas Solution currently operates on a <strong>hybrid work setup</strong>. Team members work partly from home and partly from our office locations in the Philippines. Fully remote roles are not currently offered.
               </div>
             </div>
           </div>

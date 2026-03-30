@@ -32,10 +32,9 @@ const Header = () => {
   const isHome = location.pathname === '/';
 
   const navLinks = [
-    { name: 'Philosophy', href: isHome ? '#overview' : '/#overview' },
-    { name: 'Values', href: isHome ? '#why-us' : '/#why-us' },
-    { name: 'Protocol', href: isHome ? '#culture' : '/#culture' },
-    { name: 'Openings', href: '/roles' },
+    { name: 'About', href: isHome ? '#overview' : '/#overview' },
+    { name: 'Values', href: isHome ? '#values' : '/#values' },
+    { name: 'Culture', href: isHome ? '#culture' : '/#culture' },
   ];
 
   return (
@@ -49,10 +48,9 @@ const Header = () => {
           }`}
         >
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 relative z-10 w-48 md:w-60 group" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link to="/" className="flex items-center gap-3 relative z-10 group shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
             <Logo 
-              className="w-full h-auto transition-transform duration-500 group-hover:scale-105" 
-              textClass={isScrolled && !isMobileMenuOpen ? 'fill-brand-navy' : 'fill-white'} 
+              className="h-10 md:h-12 lg:h-14 w-auto transition-transform duration-500 group-hover:scale-105" 
             />
           </Link>
 
@@ -69,13 +67,21 @@ const Header = () => {
                 {link.name}
               </a>
             ))}
-            <a
-              href="/roles#apply"
+            <Link 
+              to="/events" 
+              className={`text-sm tracking-tight transition-all hover:-translate-y-[1px] font-semibold ${
+                isScrolled && !isMobileMenuOpen ? 'text-slate-700 hover:text-brand-red' : 'text-white hover:text-white/80'
+              }`}
+            >
+              Events
+            </Link>
+            <Link
+              to="/roles"
               className="magnetic-btn relative overflow-hidden bg-brand-navy text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-md"
             >
-              <span className="relative z-10">Join Network</span>
+              <span className="relative z-10">Careers</span>
               <span className="absolute inset-0 bg-brand-red translate-y-full transition-transform duration-300 ease-in-out hover:translate-y-0 -z-0"></span>
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -110,19 +116,29 @@ const Header = () => {
               {link.name}
             </a>
           ))}
+          <Link 
+            to="/events" 
+            className={`text-4xl font-serif text-white hover:text-brand-red transition-all duration-700 italic transform ${
+              isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+            }`}
+            style={{ transitionDelay: isMobileMenuOpen ? `${100 + navLinks.length * 100}ms` : '0ms' }}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Events
+          </Link>
           <div 
             className={`w-full max-w-xs mt-8 transition-all duration-700 transform ${
               isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
             }`}
-            style={{ transitionDelay: isMobileMenuOpen ? `${100 + navLinks.length * 100}ms` : '0ms' }}
+            style={{ transitionDelay: isMobileMenuOpen ? `${100 + (navLinks.length + 1) * 100}ms` : '0ms' }}
           >
-            <a
-              href="/roles#apply"
-              className="magnetic-btn block text-brand-navy w-full text-center py-4 rounded-full font-sans font-bold text-lg bg-white shadow-lg shadow-white/10 active:scale-95 transition-transform"
+            <Link
+              to="/roles"
+              className="magnetic-btn block text-white w-full text-center py-4 rounded-full font-sans font-bold text-lg bg-brand-navy shadow-lg shadow-brand-navy/30 active:scale-95 transition-transform"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Join Network
-            </a>
+              Careers
+            </Link>
           </div>
         </nav>
       </div>

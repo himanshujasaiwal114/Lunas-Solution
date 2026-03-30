@@ -7,13 +7,7 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background slow reverse zoom
-      gsap.fromTo('.cinematic-bg',
-        { scale: 1.1 },
-        { scale: 1, duration: 4, ease: 'power2.out' }
-      );
-
-      // Fade up text elements stagger
+      // Fade up text elements stagger without heavy background animations
       gsap.from('.hero-text', {
         y: 60,
         opacity: 0,
@@ -33,16 +27,16 @@ const Hero = () => {
       className="relative h-svh w-full flex items-center justify-start overflow-hidden bg-brand-navy"
     >
       {/* Full Bleed Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-brand-navy">
         <div
-          className="cinematic-bg absolute inset-0 bg-cover bg-center mix-blend-screen opacity-50"
+          className="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-30"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
+            backgroundImage: 'url("https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=2000&q=80")',
             backgroundPosition: '50% 30%'
           }}
         />
-        {/* Heavy primary-to-black gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050A1A] via-brand-navy/80 to-transparent" />
+        {/* Heavy primary-to-black gradient overlay adjusted to let image breathe */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050A1A] via-brand-navy/60 to-brand-navy/20" />
       </div>
 
       {/* Content centered, responsive to short screens */}
@@ -51,20 +45,17 @@ const Hero = () => {
 
           <div className="hero-text text-brand-red font-mono text-sm tracking-[0.2em] uppercase flex items-center gap-3 mb-6 [@media(max-height:800px)]:mb-4">
             <span className="w-8 h-[1px] bg-brand-red"></span>
-            Specialized Clinical Operations
+            Empowering Healthcare
           </div>
 
           <h1 className="flex flex-col gap-2 mb-10 [@media(max-height:800px)]:mb-6 [@media(max-height:800px)]:gap-1 leading-none">
             <span className="hero-text font-sans font-extrabold text-5xl md:text-7xl lg:text-[6rem] [@media(max-height:800px)]:text-4xl [@media(max-height:800px)]:md:text-5xl [@media(max-height:800px)]:lg:text-[4.5rem] text-white tracking-tight">
-              Bridging operations with
-            </span>
-            <span className="hero-text font-serif font-medium italic text-6xl md:text-8xl lg:text-[8rem] [@media(max-height:800px)]:text-5xl [@media(max-height:800px)]:md:text-6xl [@media(max-height:800px)]:lg:text-[5.5rem] text-brand-light tracking-tighter ml-0 md:ml-12 drop-shadow-xl">
-              clinical expertise.
+              Lunas Solution
             </span>
           </h1>
 
           <p className="hero-text font-sans font-light text-xl md:text-2xl [@media(max-height:800px)]:text-lg text-slate-300 max-w-2xl leading-relaxed mb-12 [@media(max-height:800px)]:mb-8">
-            Join a network of highly skilled professionals supporting critical healthcare systems in a structured, competitive, and continuous learning environment.
+            Bridging healthcare with expertise.
           </p>
 
           <div className="hero-text flex gap-6">
@@ -72,7 +63,7 @@ const Hero = () => {
               to="/roles"
               className="magnetic-btn relative overflow-hidden bg-brand-red text-white px-8 py-4 [@media(max-height:800px)]:px-6 [@media(max-height:800px)]:py-3 rounded-full font-bold text-lg [@media(max-height:800px)]:text-base shadow-[0_0_30px_rgba(229,36,42,0.3)] border border-brand-red/50 hover:border-brand-red transition-all duration-300"
             >
-              <span className="relative z-10">View Open Positions</span>
+              <span className="relative z-10">View open roles</span>
               <span className="absolute inset-0 bg-red-600 translate-y-full transition-transform duration-300 ease-in-out hover:translate-y-0 -z-0"></span>
             </Link>
           </div>

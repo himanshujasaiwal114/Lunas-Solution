@@ -13,7 +13,9 @@ const Footer = () => {
           
           <div className="md:col-span-4">
             <div className="mb-6 flex items-center">
-              <Logo className="w-48 opacity-90" textClass="fill-white" />
+              <div className="bg-white/90 p-3 md:p-4 rounded-xl inline-flex">
+                <Logo className="h-12 md:h-14 w-auto opacity-100" />
+              </div>
             </div>
             <p className="text-slate-400 text-base leading-relaxed mb-8 max-w-sm">
               Bridging healthcare with expertise. Supporting critical clinical operations through precision and continuous learning.
@@ -42,7 +44,7 @@ const Footer = () => {
             <h4 className="font-sans font-bold text-lg mb-6 text-white tracking-wide">Careers</h4>
             <ul className="space-y-4 font-sans text-slate-400 text-sm">
               <li><Link to="/roles" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Open Positions</Link></li>
-              <li><a href="/roles#apply" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Join Network</a></li>
+              <li><a href="/roles#apply" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Apply</a></li>
             </ul>
           </div>
 
@@ -56,12 +58,12 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 text-slate-500 font-sans text-sm">
-            <Heart size={14} className="text-brand-red" /> 
-            <span>Equal Opportunity Employer</span>
+          <div className="flex items-start gap-3 text-slate-500 font-sans text-xs max-w-3xl">
+            <Heart size={14} className="text-brand-red shrink-0 mt-0.5" /> 
+            <span>Lunas Solution is an equal opportunity organization. We value professionalism, integrity, and respect in our workplace and welcome qualified applicants from diverse backgrounds. Hiring decisions are based on qualifications, experience, and business needs.</span>
           </div>
           <div className="text-slate-500 font-sans text-sm font-mono opacity-60">
-            &copy; {new Date().getFullYear()} LUNAS SOLUTION CORP. ALL RIGHTS RESERVED.
+            &copy; {new Date().getFullYear()} LUNAS SOLUTION. ALL RIGHTS RESERVED.
           </div>
         </div>
       </div>

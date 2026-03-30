@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Briefcase, Laptop, CreditCard, Award, GraduationCap, TrendingUp, Globe, Calendar, Clock } from 'lucide-react';
+import { Briefcase, Laptop, CreditCard, Award, GraduationCap, Globe } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,65 +9,63 @@ const Benefits = () => {
   const sectionRef = useRef(null);
 
   const perks = [
-    { icon: <CreditCard className="w-6 h-6 text-brand-blue" />, text: "Competitive compensation packages" },
-    { icon: <Briefcase className="w-6 h-6 text-brand-blue" />, text: "Hybrid work setup for many roles" },
-    { icon: <Laptop className="w-6 h-6 text-brand-blue" />, text: "Company-provided work equipment" },
-    { icon: <Award className="w-6 h-6 text-brand-blue" />, text: "Performance-based incentives and bonuses" },
-    { icon: <GraduationCap className="w-6 h-6 text-brand-blue" />, text: "Structured training programs" },
-    { icon: <TrendingUp className="w-6 h-6 text-brand-blue" />, text: "Career growth opportunities" },
-    { icon: <Globe className="w-6 h-6 text-brand-blue" />, text: "Exposure to international healthcare partners" },
-    { icon: <Calendar className="w-6 h-6 text-brand-blue" />, text: "Paid time off" },
-    { icon: <Clock className="w-6 h-6 text-brand-blue" />, text: "Paid US holidays" },
+    { icon: <CreditCard className="w-6 h-6 text-blue-400 group-hover:text-white transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />, text: "Competitive compensation packages" },
+    { icon: <Briefcase className="w-6 h-6 text-blue-400 group-hover:text-white transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />, text: "Hybrid work setup for many roles" },
+    { icon: <Laptop className="w-6 h-6 text-blue-400 group-hover:text-white transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />, text: "Company-provided work equipment for qualified roles" },
+    { icon: <Award className="w-6 h-6 text-blue-400 group-hover:text-white transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />, text: "Performance-based incentives and bonuses" },
+    { icon: <GraduationCap className="w-6 h-6 text-blue-400 group-hover:text-white transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />, text: "Structured training programs" },
+    { icon: <Globe className="w-6 h-6 text-blue-400 group-hover:text-white transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />, text: "Opportunities to work with international healthcare partners" },
   ];
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.from('.perk-item', {
-        y: 20,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
+      // Use fromTo to strictly enforce opacity reaching 1, preventing React 18 strict mode bugs
+      gsap.fromTo('.perk-item', 
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          }
         }
-      });
+      );
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section id="benefits" ref={sectionRef} className="py-24 bg-brand-navy text-white relative overflow-hidden">
-      {/* Decorative background overlay */}
-      <div 
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle at 20% 50%, #2E4DA7 0%, transparent 50%), radial-gradient(circle at 80% 50%, #E5242A 0%, transparent 50%)'
-        }}
-      />
-      
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+    <section id="benefits" ref={sectionRef} className="py-24 bg-[#141A2D] text-white relative flex justify-center z-10">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full max-w-7xl">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-bold tracking-wider text-brand-red uppercase mb-3">Rewards & Perks</h2>
-          <h3 className="text-4xl font-bold mb-6">Why Choose Lunas Solution?</h3>
-          <p className="text-lg text-slate-300">
-            We invest in our people because we believe that exceptional patient care and healthcare operations start with supported professionals.
-          </p>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="w-12 h-[1px] bg-brand-red"></span>
+            <h2 className="text-sm font-bold tracking-[0.2em] text-brand-red uppercase font-mono">Rewards & Perks</h2>
+            <span className="w-12 h-[1px] bg-brand-red"></span>
+          </div>
+          <h3 className="text-4xl md:text-5xl font-sans font-extrabold tracking-tight">
+            Why Choose Lunas Solution?
+          </h3>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {perks.map((perk, index) => (
             <div 
               key={index}
-              className="perk-item flex items-start gap-4 p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors"
+              className="perk-item group flex items-start gap-4 p-6 bg-[#21273C] border border-white/5 rounded-xl hover:bg-brand-blue/90 hover:border-brand-blue/30 transition-all duration-500 hover:-translate-y-1 shadow-md hover:shadow-xl opacity-0"
             >
-              <div className="shrink-0 p-3 bg-white/10 rounded-lg">
+              <div className="shrink-0 p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/20 group-hover:border-white/30 transition-all duration-500 shadow-sm">
                 {perk.icon}
               </div>
-              <div>
-                <h4 className="font-semibold text-lg leading-snug">{perk.text}</h4>
+              <div className="pt-2">
+                <h4 className="font-sans font-medium text-base leading-snug tracking-wide text-slate-100 group-hover:text-white transition-colors pr-2">
+                  {perk.text}
+                </h4>
               </div>
             </div>
           ))}

@@ -51,25 +51,11 @@ const CultureTeam = () => {
             
             <div className="space-y-6 text-brand-gray text-lg leading-relaxed">
               <p>
-                At Lunas Solution, healthcare professionals work in an environment focused on quality, accountability, and continuous learning.
+                At Lunas Solution, we bring together healthcare professionals who share a commitment to quality, collaboration, and continuous learning. Whether working remotely or onsite, our professionals play an important role in helping healthcare providers manage critical processes that support patient care.
               </p>
               <p>
-                Team members collaborate closely with leads, trainers, and peers to ensure accuracy and efficiency in every case handled. We believe that structured support and open communication are key to delivering exceptional results.
+                Day-to-day work at Lunas is structured yet collaborative. Team members work closely with leads, trainers, and peers to ensure accuracy, efficiency, and consistency in every case handled. We encourage open communication, knowledge sharing, and professional development so that our nurses and healthcare specialists can continue growing in their roles while delivering dependable service to our partners.
               </p>
-              <p>
-                Professionals are encouraged to share knowledge, develop their clinical expertise, and grow their careers while supporting healthcare providers in managing critical healthcare operations.
-              </p>
-            </div>
-            
-            <div className="mt-10 grid grid-cols-2 gap-6">
-              <div className="bg-brand-light p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-brand-navy mb-2">95%</div>
-                <div className="text-sm text-brand-gray font-medium">Retention Rate</div>
-              </div>
-              <div className="bg-brand-light p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-brand-navy mb-2">100%</div>
-                <div className="text-sm text-brand-gray font-medium">Focused Training</div>
-              </div>
             </div>
           </div>
           
@@ -84,8 +70,8 @@ const CultureTeam = () => {
             </div>
             <div className="absolute bottom-0 left-0 w-2/3 h-1/2 z-20">
               <img 
-                src="https://images.unsplash.com/photo-1543269664-56d5d56ed50c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Team meeting" 
+                src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Asian nurse" 
                 className="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white"
               />
             </div>

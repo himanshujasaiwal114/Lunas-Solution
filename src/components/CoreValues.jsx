@@ -17,7 +17,7 @@ const CoreValues = () => {
     {
       icon: <Handshake className="w-8 h-8 text-brand-blue" />,
       title: "Partnership",
-      description: "We work closely with healthcare organizations to deliver collaborative and streamlined solutions."
+      description: "We work closely with healthcare organizations to deliver streamlined and collaborative solutions."
     },
     {
       icon: <Brain className="w-8 h-8 text-brand-blue" />,
@@ -26,18 +26,8 @@ const CoreValues = () => {
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-brand-blue" />,
-      title: "Operational Excellence",
-      description: "We deliver structured, measurable and disciplined execution."
-    },
-    {
-      icon: <CheckCircle className="w-8 h-8 text-brand-blue" />,
-      title: "Accountability",
-      description: "We take ownership of outcomes and ensure consistent follow-through."
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8 text-brand-blue" />,
-      title: "Continuous Improvement",
-      description: "We constantly refine processes and elevate performance standards."
+      title: "Impact",
+      description: "Our work ultimately supports better care delivery by improving efficiency and operational performance."
     }
   ];
 
@@ -60,7 +50,7 @@ const CoreValues = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-brand-light">
+    <section id="values" ref={sectionRef} className="py-24 bg-brand-light">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-sm font-bold tracking-wider text-brand-red uppercase mb-3">Our Foundation</h2>
@@ -70,7 +60,7 @@ const CoreValues = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {values.map((value, index) => (
             <div 
               key={index}
