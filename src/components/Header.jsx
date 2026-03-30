@@ -61,7 +61,7 @@ const Header = () => {
                 key={link.name} 
                 href={link.href}
                 className={`text-sm tracking-tight transition-all hover:-translate-y-[1px] font-semibold ${
-                  isScrolled && !isMobileMenuOpen ? 'text-slate-700 hover:text-brand-red' : 'text-white hover:text-white/80'
+                  isScrolled && !isMobileMenuOpen ? 'text-slate-700 hover:text-brand-red' : 'text-brand-navy hover:text-brand-red'
                 }`}
               >
                 {link.name}
@@ -70,7 +70,7 @@ const Header = () => {
             <Link 
               to="/events" 
               className={`text-sm tracking-tight transition-all hover:-translate-y-[1px] font-semibold ${
-                isScrolled && !isMobileMenuOpen ? 'text-slate-700 hover:text-brand-red' : 'text-white hover:text-white/80'
+                isScrolled && !isMobileMenuOpen ? 'text-slate-700 hover:text-brand-red' : 'text-brand-navy hover:text-brand-red'
               }`}
             >
               Events
@@ -87,7 +87,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button 
             className={`md:hidden relative z-10 p-2 transition-colors ${
-              isScrolled && !isMobileMenuOpen ? 'text-brand-navy' : 'text-white'
+              isScrolled && !isMobileMenuOpen ? 'text-brand-navy' : 'text-brand-navy'
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
