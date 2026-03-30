@@ -48,16 +48,16 @@ const Testimonials = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // Staggered fade up for all cards
+      // Staggered fade up for all cards, much faster
       gsap.from('.testimonial-card', {
-        y: 60,
+        y: 30,
         opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'power3.out',
+        duration: 0.4,
+        stagger: 0.05,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 70%',
+          start: 'top 85%',
         }
       });
       
@@ -77,17 +77,17 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="perspectives" ref={containerRef} className="py-32 bg-brand-blue relative z-20 overflow-hidden">
+    <section id="perspectives" ref={containerRef} className="py-32 bg-slate-50 relative z-20 overflow-hidden border-t border-slate-100">
       
       {/* Background grid texture */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '4rem 4rem' }} />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, #000000 1px, transparent 1px), linear-gradient(to bottom, #000000 1px, transparent 1px)', backgroundSize: '4rem 4rem' }} />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 text-white">
-          <h2 className="font-sans font-bold text-4xl md:text-5xl mb-4 tracking-tight drop-shadow-sm">
+        <div className="text-center max-w-3xl mx-auto mb-20 text-brand-navy">
+          <h2 className="font-sans font-bold text-4xl md:text-5xl mb-4 tracking-tight">
             Clinical Perspectives.
           </h2>
-          <p className="font-serif text-2xl text-blue-100 italic">
+          <p className="font-serif text-2xl text-brand-blue italic">
             Voices from inside our operational network.
           </p>
         </div>
@@ -123,14 +123,14 @@ const Testimonials = () => {
 
 const TestimonialCard = ({ data }) => {
   return (
-    <div className="testimonial-card bg-slate-50/95 backdrop-blur-md rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-black/10 transition-transform duration-500 hover:-translate-y-2 border border-white/40">
-      <div className="text-brand-blue mb-6 opacity-80">
+    <div className="testimonial-card bg-white rounded-[2rem] p-8 md:p-10 shadow-xl shadow-brand-navy/5 transition-transform duration-300 hover:-translate-y-2 border border-slate-200">
+      <div className="text-brand-red mb-6 opacity-80">
         <svg width="40" height="30" viewBox="0 0 40 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M11.6667 30C5.22335 30 0 24.7766 0 18.3333C0 11.89 5.22335 6.66667 11.6667 6.66667V0C3.33333 0 -3.33333 6.66667 -3.33333 15C-3.33333 23.3333 3.33333 30 11.6667 30ZM38.3333 30C31.89 30 26.6667 24.7766 26.6667 18.3333C26.6667 11.89 31.89 6.66667 38.3333 6.66667V0C30 0 23.3333 6.66667 23.3333 15C23.3333 23.3333 30 30 38.3333 30Z" />
         </svg>
       </div>
       
-      <p className="font-sans text-slate-700 font-medium text-lg leading-relaxed mb-8">
+      <p className="font-sans text-slate-800 font-medium text-lg leading-relaxed mb-8">
         {data.quote}
       </p>
       
@@ -138,7 +138,7 @@ const TestimonialCard = ({ data }) => {
         <img 
           src={data.image} 
           alt={data.author} 
-          className="w-12 h-12 rounded-full object-cover border-2 border-brand-navy/10"
+          className="w-12 h-12 rounded-full object-cover border-2 border-brand-blue/20"
         />
         <div>
           <h4 className="font-sans font-bold text-brand-navy text-sm md:text-base">{data.author}</h4>

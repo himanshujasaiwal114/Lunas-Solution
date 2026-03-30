@@ -12,14 +12,14 @@ const Roles = () => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from('.role-card', {
-        y: 80,
+        y: 30,
         opacity: 0,
-        duration: 1.2,
-        stagger: 0.15,
-        ease: 'power3.out',
+        duration: 0.4,
+        stagger: 0.05,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 70%',
+          start: 'top 85%',
         }
       });
     }, containerRef);
@@ -51,7 +51,7 @@ const Roles = () => {
   ];
 
   return (
-    <section id="roles" ref={containerRef} className="py-32 bg-slate-50 relative z-20">
+    <section id="roles" ref={containerRef} className="py-32 bg-white relative z-20 border-t border-slate-100">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="font-sans font-bold text-4xl md:text-5xl text-brand-navy mb-4">Select Your Trajectory</h2>

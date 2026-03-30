@@ -15,18 +15,18 @@ const OpenRolesPage = () => {
     
     let ctx = gsap.context(() => {
       gsap.from('.stagger-fade', {
-        y: 60,
+        y: 20,
         opacity: 0,
-        duration: 1.2,
-        stagger: 0.15,
-        ease: 'power4.out',
+        duration: 0.4,
+        stagger: 0.05,
+        ease: 'power2.out',
         delay: 0.1
       });
       
       gsap.from('.glow-pulse', {
         opacity: 0.3,
         scale: 0.8,
-        duration: 2,
+        duration: 1.5,
         repeat: -1,
         yoyo: true,
         ease: 'sine.inOut'

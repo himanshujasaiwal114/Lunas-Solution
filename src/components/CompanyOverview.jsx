@@ -9,27 +9,29 @@ const CompanyOverview = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
+      // Speed up text animation to eliminate waiting
       gsap.from('.overview-text > *', {
-        y: 30,
+        y: 20,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
+        duration: 0.4,
+        stagger: 0.05,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 80%',
+          start: 'top 85%',
         }
       });
 
+      // Speed up image animation
       gsap.from('.overview-image', {
-        x: 50,
+        x: 30,
         opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.4,
+        duration: 0.5,
+        ease: 'power2.out',
+        delay: 0.1,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 80%',
+          start: 'top 85%',
         }
       });
     }, containerRef);
@@ -89,9 +91,9 @@ const CompanyOverview = () => {
           <div className="overview-image order-1 md:order-2 relative">
             <div className="absolute inset-0 bg-brand-navy rounded-lg -right-4 -bottom-4 z-0"></div>
             <img 
-              src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-              alt="Medical professionals analyzing data" 
-              className="relative z-10 w-full rounded-lg shadow-xl object-cover h-[500px]"
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+              alt="Healthcare professionals collaborating in an office" 
+              className="relative z-10 w-full rounded-lg shadow-xl object-cover h-[400px] md:h-[500px]"
             />
           </div>
           

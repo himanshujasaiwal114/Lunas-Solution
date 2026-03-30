@@ -10,25 +10,25 @@ const CultureTeam = () => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from('.culture-image', {
-        scale: 0.95,
+        scale: 0.98,
         opacity: 0,
-        duration: 1.2,
-        ease: 'power3.out',
+        duration: 0.4,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 70%',
+          start: 'top 85%',
         }
       });
 
       gsap.from('.culture-text > *', {
-        x: -30,
+        x: -20,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
+        duration: 0.4,
+        stagger: 0.05,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 70%',
+          start: 'top 85%',
         }
       });
     }, containerRef);

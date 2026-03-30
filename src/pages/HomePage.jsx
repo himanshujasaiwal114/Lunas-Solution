@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import TrustedBy from '../components/TrustedBy';
 import CompanyOverview from '../components/CompanyOverview';
 import CoreValues from '../components/CoreValues';
 import CultureTeam from '../components/CultureTeam';
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Header />
       <main className="">
         <Hero />
+        <TrustedBy />
         <CompanyOverview />
         <CoreValues />
         <CultureTeam />
