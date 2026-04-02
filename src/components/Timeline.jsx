@@ -153,10 +153,10 @@ const Timeline = () => {
                 </div>
 
                 {/* Desktop Layout (Hidden on small screens) */}
-                <div className={`hidden md:flex items-center w-full relative ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
+                <div className="hidden md:flex items-center w-full relative flex-row">
                   
-                  {/* Left (or Right if reversed) Column */}
-                  <div className={`w-1/2 flex items-center ${isEven ? 'pr-16' : 'pl-16'}`}>
+                  {/* Left Column */}
+                  <div className="w-1/2 flex items-center pr-16">
                     {isEven ? (
                        <DateBadge date={event.date} isDark={event.isDarkBadge} align="right" />
                     ) : (
@@ -167,8 +167,8 @@ const Timeline = () => {
                   {/* Center dot */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-slate-400 border-[3px] border-slate-50 shadow-sm z-10"></div>
 
-                  {/* Right (or Left if reversed) Column */}
-                  <div className={`w-1/2 flex items-center ${isEven ? 'pl-16' : 'pr-16'}`}>
+                  {/* Right Column */}
+                  <div className="w-1/2 flex items-center pl-16">
                     {isEven ? (
                        <EventCard event={event} />
                     ) : (
