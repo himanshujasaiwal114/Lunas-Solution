@@ -31,7 +31,7 @@ const Hero = () => {
         <div
           className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-15 md:opacity-20"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=2000&q=80")', // Authentic nurse/medical professional teamwork photo
+            backgroundImage: 'url("/assets/For Website/2026/ec6b9fc6-f82f-4618-b9b2-f43a6321538e.jpg")', 
             backgroundPosition: 'center 20%'
           }}
         />
@@ -44,10 +44,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 md:px-12 z-10 w-full mt-10 md:mt-24 [@media(max-height:800px)]:mt-10 [@media(max-height:650px)]:mt-4">
         <div className="max-w-4xl">
 
-          <div className="hero-text text-brand-red font-mono text-[10px] md:text-sm tracking-[0.2em] uppercase flex items-center gap-3 mb-6 [@media(max-height:800px)]:mb-4">
-            <span className="w-8 h-[2px] bg-brand-red"></span>
-            <span className="font-bold">Empowering Healthcare</span>
-          </div>
+
 
           <h1 className="flex flex-col gap-2 mb-8 md:mb-10 [@media(max-height:800px)]:mb-6 [@media(max-height:800px)]:gap-1 leading-[1.05]">
             <span className="hero-text font-sans font-extrabold text-5xl md:text-7xl lg:text-[6rem] [@media(max-height:800px)]:text-4xl [@media(max-height:800px)]:md:text-5xl [@media(max-height:800px)]:lg:text-[4.5rem] text-brand-navy tracking-tight">
@@ -56,7 +53,7 @@ const Hero = () => {
           </h1>
 
           <p className="hero-text font-sans font-medium text-lg md:text-2xl [@media(max-height:800px)]:text-lg text-brand-blue max-w-2xl leading-relaxed mb-10 md:mb-12 [@media(max-height:800px)]:mb-8">
-            Bridging healthcare with expertise. Your premier partner in medical administration and compliance.
+            Bridging healthcare with expertise.
           </p>
 
           <div className="hero-text flex flex-col sm:flex-row gap-4 sm:gap-6">

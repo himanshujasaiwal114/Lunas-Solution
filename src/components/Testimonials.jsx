@@ -6,40 +6,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
-    quote: "The structured protocols and continuous support have completely transformed my approach to clinical documentation. It's an environment where precision is truly rewarded.",
-    author: "Maria Santos",
-    role: "CDI Specialist",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    quote: "Over more than two years at Lunas, the journey has been dynamic yet rewarding. Supportive colleagues ease the pressure, and the experience continues to develop my skills and uncover untapped potential.",
+    author: "Rona Barola",
+    role: "Clinical Nurse Auditor",
   },
   {
-    quote: "Working with Lunas means I get to apply my bedside experience to high-impact operational roles. The integration with US healthcare standards is seamless.",
-    author: "David Chen",
+    quote: "Working with Lunas has strengthened my clinical judgment, attention to detail, and leadership. It offers a great support system, growth opportunities, performance incentives, and a flexible setup that saves time, cost, and effort.",
+    author: "Aprilyn Saraza",
+    role: "Production Team Leader",
+  },
+  {
+    quote: "Working with Lunas has improved my accuracy and efficiency in handling medical records. The team is supportive, and the workflow allows me to consistently deliver high-quality results.",
+    author: "Reymond Entes",
+    role: "Utilization Review Analyst",
+  },
+  {
+    quote: "Being part of Lunas has been an amazing experience so far. It offers meaningful career growth, and strong team collaboration is clearly evident, ensuring that the quality of care and services are never compromised.",
+    author: "Aaron Eric Tolentino",
+    role: "Production Team Leader",
+  },
+  {
+    quote: "As a UR Nurse, I'm able to use my critical thinking and knowledge in pathophysiology to analyze cases, identify correct subsets, and help pinpoint accurate diagnosis. This role allows me to continuously learn and grow through ongoing retraining and experience.",
+    author: "Channa Louise Beroin",
     role: "Utilization Review Nurse",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
   },
   {
-    quote: "Their dedication to finding the right fit is unparalleled. You aren't just placed; you are aligned with systems that maximize your clinical acumen.",
-    author: "Isabella Rodriguez",
-    role: "Clinical Compliance Analyst",
-    image: "https://images.unsplash.com/photo-1594824416738-1616127e90c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    quote: "A refreshing and imaginative agency that consistently delivers exceptional results. Highly recommended for any professional seeking serious clinical growth.",
-    author: "Victoria Thompson",
-    role: "Senior Abstractor",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    quote: "From day one, the onboarding felt like a masterclass in modern healthcare operations. They elevate your skills while respecting your background.",
-    author: "Jonathan Pierce",
-    role: "UR Analyst",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    quote: "The diagnostic screening process was tough, but it ensured I was placed perfectly. I am now doing the best work of my career.",
-    author: "Samantha Johnson",
-    role: "HEDIS Specialist",
-    image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    quote: "As a Lunas team member, I've navigated structured workflows, met performance targets, and managed tasks independently. My role has provided me valuable exposure to a metrics-driven environment and remote operational processes.",
+    author: "Charles Fel Estrada",
+    role: "Utilization Review Nurse",
   }
 ];
 
@@ -135,11 +129,6 @@ const TestimonialCard = ({ data }) => {
       </p>
       
       <div className="flex items-center gap-4">
-        <img 
-          src={data.image} 
-          alt={data.author} 
-          className="w-12 h-12 rounded-full object-cover border-2 border-brand-blue/20"
-        />
         <div>
           <h4 className="font-sans font-bold text-brand-navy text-sm md:text-base">{data.author}</h4>
           <p className="font-mono text-[10px] md:text-xs text-slate-500 uppercase tracking-widest">{data.role}</p>

@@ -84,6 +84,7 @@ const CompanyOverview = () => {
                     <div>
                       <strong className="text-brand-navy block text-sm tracking-tight mb-1">Alabang, Muntinlupa City, Philippines</strong>
                       <span className="text-xs text-brand-gray leading-tight block">Main operations and administrative office supporting recruitment and training.</span>
+                      <span className="text-[11px] text-brand-navy/60 font-mono mt-2 block">14°25&#39;29.8&quot;N 121°01&#39;22.9&quot;E</span>
                     </div>
                   </div>
                 </div>
@@ -104,6 +105,7 @@ const CompanyOverview = () => {
                     <div>
                       <strong className="text-brand-navy block text-sm tracking-tight mb-1">Dumaguete City, Negros Oriental, Philippines</strong>
                       <span className="text-xs text-brand-gray leading-tight block">Operations site supporting healthcare services and clinical functions.</span>
+                      <span className="text-[11px] text-brand-navy/60 font-mono mt-2 block">9°18&#39;38.0&quot;N 123°18&#39;27.3&quot;E</span>
                     </div>
                   </div>
                 </div>
@@ -118,7 +120,7 @@ const CompanyOverview = () => {
           <div className="overview-image order-1 md:order-2 relative">
             <div className="absolute inset-0 bg-brand-navy rounded-lg -right-4 -bottom-4 z-0"></div>
             <img 
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+              src="/assets/For Website/2026/73387199-9fb2-4102-9c7d-9408ddb9f68d.jpg" 
               alt="Healthcare professionals collaborating in an office" 
               className="relative z-10 w-full rounded-lg shadow-xl object-cover h-[400px] md:h-[500px]"
             />

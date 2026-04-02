@@ -45,7 +45,7 @@ const Benefits = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="w-12 h-[2px] bg-brand-red"></span>
-            <h2 className="text-sm font-bold tracking-[0.2em] text-brand-red uppercase font-mono">Rewards & Perks</h2>
+            <h2 className="text-sm font-bold tracking-[0.2em] text-brand-red uppercase font-mono">What We Offer</h2>
             <span className="w-12 h-[2px] bg-brand-red"></span>
           </div>
           <h3 className="text-4xl md:text-5xl font-sans font-extrabold tracking-tight text-brand-navy">

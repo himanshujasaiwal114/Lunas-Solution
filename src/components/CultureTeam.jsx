@@ -43,10 +43,10 @@ const CultureTeam = () => {
           
           <div className="culture-text order-2 md:order-1">
             <h2 className="text-sm font-bold tracking-wider text-brand-red uppercase mb-3">
-              Company Culture
+              Life with Lunas Solution
             </h2>
             <h3 className="text-3xl md:text-5xl font-bold text-brand-navy leading-tight mb-8">
-              A Structured Yet Collaborative Environment
+              Built on clinical expertise and collaboration
             </h3>
             
             <div className="space-y-6 text-brand-gray text-lg leading-relaxed">
@@ -63,14 +63,14 @@ const CultureTeam = () => {
             {/* Collage style layout */}
             <div className="absolute top-0 right-0 w-3/4 h-3/4 z-10">
               <img 
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="/assets/For Website/2025/Lunas-1875.jpg" 
                 alt="Healthcare professionals collaborating" 
                 className="w-full h-full object-cover rounded-xl shadow-xl border-4 border-white"
               />
             </div>
             <div className="absolute bottom-0 left-0 w-2/3 h-1/2 z-20">
               <img 
-                src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="/assets/For Website/2025/IMG_20250513_153022 (1).jpg" 
                 alt="Asian nurse" 
                 className="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white"
               />

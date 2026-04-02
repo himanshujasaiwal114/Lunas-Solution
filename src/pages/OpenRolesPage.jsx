@@ -102,16 +102,12 @@ const OpenRolesPage = () => {
             <div className="lg:w-1/3 shrink-0 relative">
               <div className="sticky top-40">
                 <div className="stagger-fade">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="h-[1px] w-12 bg-brand-red"></div>
-                    <span className="font-mono text-xs uppercase tracking-widest text-brand-red font-bold">Lunas Network</span>
-                  </div>
                   <h1 className="font-sans font-extrabold text-6xl md:text-7xl lg:text-8xl text-brand-navy mb-6 tracking-tighter leading-[0.95]">
                     Open<br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-navy">Roles</span>
                   </h1>
                   <p className="font-sans text-sm text-slate-600 mb-12 max-w-md leading-relaxed">
-                    We want candidates to understand that Lunas Solution is a professional environment where healthcare expertise is valued, and that we play an important role in supporting healthcare providers through services such as utilization review. While our work requires accountability and attention to detail, we aim to provide a collaborative workplace where professionals can continue developing their skills and contribute meaningfully to healthcare operations.
+                    Be part of a team that supports healthcare providers through specialized clinical and operational services. At Lunas Solution, your expertise contributes to work that requires precision, consistency, and professional growth. View our open roles and take the next step in your career.
                   </p>
                 </div>
                 
