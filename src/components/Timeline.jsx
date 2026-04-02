@@ -187,21 +187,22 @@ const Timeline = () => {
       {/* Lightbox Overlay */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-[100] bg-brand-navy/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-[100] bg-brand-navy/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-5xl max-h-full flex flex-col items-center justify-center animate-in fade-in zoom-in duration-300">
-            <button 
-              className="absolute -top-12 right-0 text-white hover:text-slate-300 transition-colors bg-white/10 hover:bg-white/20 rounded-full p-2"
-              onClick={() => setSelectedImage(null)}
-              aria-label="Close image"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
+          <button 
+            className="fixed top-4 right-4 md:top-8 md:right-8 text-white hover:text-slate-300 transition-colors bg-white/10 hover:bg-white/20 rounded-full p-2 z-[110]"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close image"
+          >
+            <svg className="w-8 h-8 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+          
+          <div className="relative w-full h-full max-w-6xl flex items-center justify-center animate-in fade-in zoom-in duration-300">
             <img 
               src={selectedImage} 
               alt="Enlarged event view" 
-              className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
+              className="w-auto h-auto max-w-full max-h-[90vh] md:max-h-[85vh] object-contain rounded-xl shadow-2xl"
               onClick={(e) => e.stopPropagation()} // prevent closing when clicking the image itself
             />
           </div>
