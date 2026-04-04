@@ -63,15 +63,15 @@ const CultureTeam = () => {
             {/* Collage style layout */}
             <div className="absolute top-0 right-0 w-3/4 h-3/4 z-10">
               <img 
-                src="/assets/For Website/2025/Lunas-1875.jpg" 
+                src="/assets/For Website/2025/2025Interqual Cert.jpg" 
                 alt="Healthcare professionals collaborating" 
                 className="w-full h-full object-cover rounded-xl shadow-xl border-4 border-white"
               />
             </div>
             <div className="absolute bottom-0 left-0 w-2/3 h-1/2 z-20">
               <img 
-                src="/assets/For Website/2025/IMG_20250513_153022 (1).jpg" 
-                alt="Asian nurse" 
+                src="/assets/For Website/2022/Media (1).jpg" 
+                alt="Professional healthcare team" 
                 className="w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white"
               />
             </div>

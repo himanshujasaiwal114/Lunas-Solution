@@ -115,8 +115,8 @@ const OpenRolesPage = () => {
                   <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-4">
                     Direct Inquiry
                   </p>
-                  <a href="mailto:LunasRecruitmentTeam@hurc.com" className="font-serif italic text-2xl text-brand-navy hover:text-brand-red transition-colors inline-block hover:-translate-y-1 transform duration-300">
-                    LunasRecruitmentTeam@hurc.com
+                  <a href="mailto:LunasRecruitmentTeam@lunas.com.ph" className="font-serif italic text-2xl text-brand-navy hover:text-brand-red transition-colors inline-block hover:-translate-y-1 transform duration-300">
+                    LunasRecruitmentTeam@lunas.com.ph
                   </a>
                   
                   <div className="mt-12 flex flex-col gap-6 font-mono text-sm uppercase tracking-widest text-slate-500 font-bold">
@@ -263,7 +263,7 @@ const OpenRolesPage = () => {
                   <p className="font-serif text-slate-500 italic text-xl">Ready to align your expertise with our precision operations? Construct your application payload below.</p>
                 </div>
                 
-                <form action="https://formsubmit.co/LunasRecruitmentTeam@hurc.com" method="POST" encType="multipart/form-data" className="relative z-10 space-y-8 max-w-3xl mx-auto">
+                <form action="https://formsubmit.co/LunasRecruitmentTeam@lunas.com.ph" method="POST" encType="multipart/form-data" className="relative z-10 space-y-8 max-w-3xl mx-auto">
                   {/* Honeypot for spam protection */}
                   <input type="text" name="_honey" style={{ display: 'none' }} />
                   {/* Disable captcha for smoother UX */}

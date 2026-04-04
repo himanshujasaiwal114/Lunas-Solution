@@ -7,13 +7,20 @@ const getEvents = (onImageClick) => [
     isDarkBadge: true,
     title: "Leadership & Growth",
     description: "Rolling into 2026, we continued our strong physical presence at the SU Job Fair to recruit top talent, while hosting comprehensive Team Lead Training to empower our management.",
-    renderExtra: () => (
-      <div className="flex gap-4 mt-5">
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2026/d9664b7b-5ee3-490d-ad72-0c0d3087b7dc.jpg")} src="/assets/For Website/2026/d9664b7b-5ee3-490d-ad72-0c0d3087b7dc.jpg" alt="SU Job Fair" className="w-24 h-24 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2026/658139517_1481195300066431_2591688036358710855_n 1.jpg")} src="/assets/For Website/2026/658139517_1481195300066431_2591688036358710855_n 1.jpg" alt="Team Lead Training" className="w-24 h-24 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2026/ec6b9fc6-f82f-4618-b9b2-f43a6321538e.jpg")} src="/assets/For Website/2026/ec6b9fc6-f82f-4618-b9b2-f43a6321538e.jpg" alt="Leadership" className="w-24 h-24 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-      </div>
-    )
+    renderExtra: () => {
+      const images = [
+        "/assets/For Website/2026/73387199-9fb2-4102-9c7d-9408ddb9f68d.jpg",
+        "/assets/For Website/2026/ec6b9fc6-f82f-4618-b9b2-f43a6321538e.jpg",
+        "/assets/For Website/2024/Year End Party (455).JPG"
+      ];
+      return (
+        <div className="flex gap-4 mt-5">
+          {images.map((src, idx) => (
+            <img key={idx} loading="lazy" decoding="async" onClick={() => onImageClick(images, idx)} src={src} alt="Event moment" className="w-24 h-24 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
+          ))}
+        </div>
+      );
+    }
   },
   {
     id: 2,
@@ -21,14 +28,21 @@ const getEvents = (onImageClick) => [
     isDarkBadge: false,
     title: "Year End Celebrations",
     description: "We securely wrapped up an incredible year with grand Year End Parties across both our Manila and Dumaguete operations, celebrating our collective successes and teams.",
-    renderExtra: () => (
-      <div className="flex gap-3 mt-5 flex-wrap">
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2025/Lunas Christmas Party 2025 (53).JPG")} src="/assets/For Website/2025/Lunas Christmas Party 2025 (53).JPG" alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2025/Lunas Christmas Party 2025 (65).JPG")} src="/assets/For Website/2025/Lunas Christmas Party 2025 (65).JPG" alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2025/Lunas Christmas Party 2025 (39).JPG")} src="/assets/For Website/2025/Lunas Christmas Party 2025 (39).JPG" alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2025/Lunas Christmas Party 2025 (6).JPG")} src="/assets/For Website/2025/Lunas Christmas Party 2025 (6).JPG" alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-      </div>
-    )
+    renderExtra: () => {
+      const images = [
+        "/assets/For Website/2025/Lunas Christmas Party 2025 (53).JPG",
+        "/assets/For Website/2025/Lunas Christmas Party 2025 (65).JPG",
+        "/assets/For Website/2025/Lunas Christmas Party 2025 (39).JPG",
+        "/assets/For Website/2025/Lunas Christmas Party 2025 (6).JPG"
+      ];
+      return (
+        <div className="flex gap-3 mt-5 flex-wrap">
+          {images.map((src, idx) => (
+            <img key={idx} loading="lazy" decoding="async" onClick={() => onImageClick(images, idx)} src={src} alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
+          ))}
+        </div>
+      );
+    }
   },
   {
     id: 3,
@@ -36,21 +50,28 @@ const getEvents = (onImageClick) => [
     isDarkBadge: false,
     title: "Community & Engagement",
     description: "From our viral internal TikTok Challenge that boosted team morale, to an outstanding recruitment presence at the 2025 SU Job Fair, community remained at our core.",
-    renderExtra: () => (
-      <div className="flex gap-3 mt-5">
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2025/Lunas-1954.jpg")} src="/assets/For Website/2025/Lunas-1954.jpg" alt="Community" className="w-20 h-20 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2025/Lunas-1955.jpg")} src="/assets/For Website/2025/Lunas-1955.jpg" alt="Community" className="w-20 h-20 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <div className="flex items-center gap-3 ml-2 border-l border-slate-100 pl-5">
-          <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-500 flex items-center justify-center shrink-0 border border-pink-100">
-             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.64-5.46-.22-2.39.81-4.78 2.62-6.19 1.73-1.35 4.01-1.66 6.07-1.12-.02-1.41-.01-2.82-.01-4.24-1.28-.31-2.61-.17-3.83.27-1.6.58-2.97 1.76-3.72 3.19-.94 1.83-1.02 4.02-.27 5.92.79 1.98 2.55 3.52 4.63 4.11 2.21.61 4.64.39 6.66-.82 1.58-.95 2.71-2.51 3.1-4.3.06-.27.1-.55.1-.82-.03-6.66-.02-13.31-.02-19.96z"/></svg>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold text-slate-800 leading-tight">TikTok Challenge</h4>
-            <p className="text-xs text-slate-500 mt-0.5">Viral Team Engagement</p>
+    renderExtra: () => {
+      const images = [
+        "/assets/For Website/2025/Lunas-1954.jpg",
+        "/assets/For Website/2025/Lunas-1955.jpg"
+      ];
+      return (
+        <div className="flex gap-3 mt-5">
+          {images.map((src, idx) => (
+            <img key={idx} loading="lazy" decoding="async" onClick={() => onImageClick(images, idx)} src={src} alt="Community" className="w-20 h-20 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
+          ))}
+          <div className="flex items-center gap-3 ml-2 border-l border-slate-100 pl-5">
+            <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-500 flex items-center justify-center shrink-0 border border-pink-100">
+               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.64-5.46-.22-2.39.81-4.78 2.62-6.19 1.73-1.35 4.01-1.66 6.07-1.12-.02-1.41-.01-2.82-.01-4.24-1.28-.31-2.61-.17-3.83.27-1.6.58-2.97 1.76-3.72 3.19-.94 1.83-1.02 4.02-.27 5.92.79 1.98 2.55 3.52 4.63 4.11 2.21.61 4.64.39 6.66-.82 1.58-.95 2.71-2.51 3.1-4.3.06-.27.1-.55.1-.82-.03-6.66-.02-13.31-.02-19.96z"/></svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-slate-800 leading-tight">TikTok Challenge</h4>
+              <p className="text-xs text-slate-500 mt-0.5">Viral Team Engagement</p>
+            </div>
           </div>
         </div>
-      </div>
-    )
+      );
+    }
   },
   {
     id: 4,
@@ -58,13 +79,20 @@ const getEvents = (onImageClick) => [
     isDarkBadge: false,
     title: "Building Strong Foundations",
     description: "We prioritized building deeply connected teams through extensive CDI Team Building activities and our LUNAS Corporate Social Responsibility (CSR) events.",
-    renderExtra: () => (
-      <div className="flex gap-4 mt-5">
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2024/IMG_7287.jpg")} src="/assets/For Website/2024/IMG_7287.jpg" alt="CDI Team Building" className="w-20 h-20 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2024/IMG_7466.jpg")} src="/assets/For Website/2024/IMG_7466.jpg" alt="LUNAS CSR" className="w-20 h-20 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2024/IMG_7274.jpg")} src="/assets/For Website/2024/IMG_7274.jpg" alt="LUNAS CSR" className="w-20 h-20 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-      </div>
-    )
+    renderExtra: () => {
+      const images = [
+        "/assets/For Website/2024/D3.png",
+        "/assets/For Website/2024/IMG_7466.jpg",
+        "/assets/For Website/2024/IMG_7274.jpg"
+      ];
+      return (
+        <div className="flex gap-4 mt-5">
+          {images.map((src, idx) => (
+            <img key={idx} loading="lazy" decoding="async" onClick={() => onImageClick(images, idx)} src={src} alt="LUNAS CSR" className="w-20 h-20 rounded-lg object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
+          ))}
+        </div>
+      );
+    }
   },
   {
     id: 5,
@@ -72,16 +100,23 @@ const getEvents = (onImageClick) => [
     isDarkBadge: false,
     title: "Empowering Our Leaders",
     description: "We laid the groundwork for robust operational success by hosting our first major 2024 Team Lead Training program and unified our goals during the Year End Party.",
-    renderExtra: () => (
-      <div className="flex gap-3 mt-5 flex-wrap">
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2024/Year End Party (419).JPG")} src="/assets/For Website/2024/Year End Party (419).JPG" alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2024/Year End Party (76).JPG")} src="/assets/For Website/2024/Year End Party (76).JPG" alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <img loading="lazy" decoding="async" onClick={() => onImageClick("/assets/For Website/2024/Year End Party (357).JPG")} src="/assets/For Website/2024/Year End Party (357).JPG" alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
-        <div className="w-16 h-16 rounded-xl border-2 border-white bg-brand-navy text-white flex items-center justify-center shadow-sm text-xs font-bold z-10">
-          +40
+    renderExtra: () => {
+      const images = [
+        "/assets/For Website/2024/Year End Party (419).JPG",
+        "/assets/For Website/2024/Year End Party (76).JPG",
+        "/assets/For Website/2024/Year End Party (357).JPG"
+      ];
+      return (
+        <div className="flex gap-3 mt-5 flex-wrap">
+          {images.map((src, idx) => (
+             <img key={idx} loading="lazy" decoding="async" onClick={() => onImageClick(images, idx)} src={src} alt="Party" className="w-16 h-16 rounded-xl object-cover shadow-sm border border-slate-100 cursor-pointer hover:opacity-80 transition-opacity" />
+          ))}
+          <div className="w-16 h-16 rounded-xl border-2 border-white bg-brand-navy text-white flex items-center justify-center shadow-sm text-xs font-bold z-10">
+            +40
+          </div>
         </div>
-      </div>
-    )
+      );
+    }
   }
 ];
 
@@ -111,19 +146,37 @@ const EventCard = ({ event }) => {
 };
 
 const Timeline = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [lightbox, setLightbox] = useState({ isOpen: false, images: [], currentIndex: 0 });
+
+  const handleNext = (e) => {
+    if (e) e.stopPropagation();
+    setLightbox(prev => ({
+      ...prev,
+      currentIndex: prev.currentIndex === prev.images.length - 1 ? 0 : prev.currentIndex + 1
+    }));
+  };
+
+  const handlePrev = (e) => {
+    if (e) e.stopPropagation();
+    setLightbox(prev => ({
+      ...prev,
+      currentIndex: prev.currentIndex === 0 ? prev.images.length - 1 : prev.currentIndex - 1
+    }));
+  };
 
   // Close lightbox on Escape key
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') setSelectedImage(null);
+      if (e.key === 'Escape') setLightbox(prev => ({ ...prev, isOpen: false }));
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
     };
-    if (selectedImage) window.addEventListener('keydown', handleKeyDown);
+    if (lightbox.isOpen) window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImage]);
+  }, [lightbox.isOpen]);
 
-  const onImageClick = (src) => {
-    setSelectedImage(src);
+  const onImageClick = (images, index) => {
+    setLightbox({ isOpen: true, images, currentIndex: index });
   };
 
   const events = getEvents(onImageClick);
@@ -185,27 +238,54 @@ const Timeline = () => {
       </div>
 
       {/* Lightbox Overlay */}
-      {selectedImage && (
+      {lightbox.isOpen && lightbox.images.length > 0 && (
         <div 
           className="fixed inset-0 z-[100] bg-brand-navy/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setLightbox(prev => ({ ...prev, isOpen: false }))}
         >
           <button 
             className="fixed top-4 right-4 md:top-8 md:right-8 text-white hover:text-slate-300 transition-colors bg-white/10 hover:bg-white/20 rounded-full p-2 z-[110]"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setLightbox(prev => ({ ...prev, isOpen: false }))}
             aria-label="Close image"
           >
             <svg className="w-8 h-8 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
           
           <div className="relative w-full h-full max-w-6xl flex items-center justify-center animate-in fade-in zoom-in duration-300">
+            {lightbox.images.length > 1 && (
+              <button 
+                className="absolute left-0 md:left-4 z-[110] text-white hover:text-slate-300 transition-colors bg-black/40 hover:bg-black/60 rounded-full p-3"
+                onClick={handlePrev}
+                aria-label="Previous image"
+              >
+                <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" /></svg>
+              </button>
+            )}
+
             <img 
-              src={selectedImage} 
+              key={lightbox.currentIndex} // force re-render on change
+              src={lightbox.images[lightbox.currentIndex]} 
               alt="Enlarged event view" 
-              className="w-auto h-auto max-w-full max-h-[90vh] md:max-h-[85vh] object-contain rounded-xl shadow-2xl"
+              className="w-auto h-auto max-w-full max-h-[90vh] md:max-h-[85vh] object-contain rounded-xl shadow-2xl transition-opacity duration-300"
               onClick={(e) => e.stopPropagation()} // prevent closing when clicking the image itself
             />
+
+            {lightbox.images.length > 1 && (
+              <button 
+                className="absolute right-0 md:right-4 z-[110] text-white hover:text-slate-300 transition-colors bg-black/40 hover:bg-black/60 rounded-full p-3"
+                onClick={handleNext}
+                aria-label="Next image"
+              >
+                <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" /></svg>
+              </button>
+            )}
           </div>
+          
+          {lightbox.images.length > 1 && (
+            <div className="fixed bottom-4 md:bottom-8 text-white/70 font-medium tracking-wide">
+              {lightbox.currentIndex + 1} / {lightbox.images.length}
+            </div>
+          )}
         </div>
       )}
     </>

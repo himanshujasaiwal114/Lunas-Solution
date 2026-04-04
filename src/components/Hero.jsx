@@ -29,10 +29,11 @@ const Hero = () => {
       {/* Background Image - Authentic healthcare/office setting instead of dark abstract */}
       <div className="absolute inset-0 z-0 bg-white">
         <div
-          className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-15 md:opacity-20"
+          className="absolute inset-0 bg-cover bg-center opacity-15 md:opacity-20 will-change-transform"
           style={{
             backgroundImage: 'url("/assets/For Website/2026/ec6b9fc6-f82f-4618-b9b2-f43a6321538e.jpg")', 
-            backgroundPosition: 'center 20%'
+            backgroundPosition: 'center 20%',
+            transform: 'translateZ(0)'
           }}
         />
         {/* Soft white gradient so text remains highly legible */}
