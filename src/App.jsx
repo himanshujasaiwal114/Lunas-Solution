@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import OpenRolesPage from './pages/OpenRolesPage';
 import EventsPage from './pages/EventsPage';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/roles" element={<OpenRolesPage />} />
         <Route path="/events" element={<EventsPage />} />
       </Routes>
+      <Chatbot />
     </Router>
   );
 }
