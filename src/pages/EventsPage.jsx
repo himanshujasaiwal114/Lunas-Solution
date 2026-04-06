@@ -46,7 +46,7 @@ const EventsPage = () => {
               <div className="h-[1px] w-12 bg-brand-red"></div>
             </div>
             
-            <h1 className="font-sans font-extrabold text-5xl md:text-7xl text-brand-navy mb-8 tracking-tighter leading-tight text-center">
+            <h1 className="font-sans font-extrabold text-5xl md:text-7xl text-brand-navy mb-8 tracking-tight leading-tight text-center">
               Recruitment <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-navy">Events</span>
             </h1>
             

@@ -102,7 +102,7 @@ const OpenRolesPage = () => {
             <div className="lg:w-1/3 shrink-0 relative">
               <div className="sticky top-40">
                 <div className="stagger-fade">
-                  <h1 className="font-sans font-extrabold text-6xl md:text-7xl lg:text-8xl text-brand-navy mb-6 tracking-tighter leading-[0.95]">
+                  <h1 className="font-sans font-extrabold text-6xl md:text-7xl lg:text-8xl text-brand-navy mb-6 tracking-tight leading-[0.95]">
                     Open<br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-navy">Roles</span>
                   </h1>
