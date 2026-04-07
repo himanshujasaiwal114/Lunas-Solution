@@ -94,8 +94,9 @@ const OpenRolesPage = () => {
       <NoiseOverlay />
       <Header />
       
-      <main ref={containerRef} className="flex-1 pt-40 pb-32 relative z-10">
-        <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+      <main ref={containerRef} className="flex-1 pt-32 pb-32 relative z-10">
+        <Benefits />
+        <div className="container mx-auto px-6 md:px-12 max-w-7xl mt-24">
           
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
             
@@ -328,7 +329,6 @@ const OpenRolesPage = () => {
         </div>
       </main>
 
-      <Benefits />
       <Footer />
     </div>
   );
