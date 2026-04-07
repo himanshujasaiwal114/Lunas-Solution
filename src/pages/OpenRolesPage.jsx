@@ -4,6 +4,7 @@ import { ChevronDown, ArrowUpRight, MapPin, Clock, Upload, Send, ShieldCheck, Da
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import NoiseOverlay from '../components/NoiseOverlay';
+import Benefits from '../components/Benefits';
 
 const OpenRolesPage = () => {
   const containerRef = useRef(null);
@@ -327,6 +328,7 @@ const OpenRolesPage = () => {
         </div>
       </main>
 
+      <Benefits />
       <Footer />
     </div>
   );
