@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { MessageSquare, X, Minimize2, Send, Bot, User } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { MessageSquare, Minimize2, Send, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const INITIAL_MESSAGES = [
@@ -60,7 +60,7 @@ const Chatbot = () => {
     // 1. Remove the current options block and add User selection
     const updatedMessages = messages.filter(m => m.type !== 'options');
     updatedMessages.push({
-      id: Date.now(),
+      id: updatedMessages.length + 100,
       type: 'user',
       text: option.label
     });
@@ -100,9 +100,9 @@ const Chatbot = () => {
 
       setMessages(prev => [
         ...prev,
-        { id: Date.now(), type: 'bot', text: botResponse },
+        { id: prev.length + 100, type: 'bot', text: botResponse },
         { 
-          id: Date.now() + 1, 
+          id: prev.length + 101, 
           type: 'options', 
           options: [
             { id: 'roles', label: "What roles are open?" },

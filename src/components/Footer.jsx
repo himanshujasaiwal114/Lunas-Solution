@@ -34,9 +34,9 @@ const Footer = () => {
           <div className="md:col-span-2 md:col-start-7">
             <h4 className="font-sans font-bold text-lg mb-6 text-white tracking-wide">Platform</h4>
             <ul className="space-y-4 font-sans text-slate-400 text-sm">
-              <li><a href={isHome ? '#overview' : '/#overview'} className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Philosophy</a></li>
-              <li><a href={isHome ? '#why-us' : '/#why-us'} className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Values</a></li>
-              <li><a href={isHome ? '#culture' : '/#culture'} className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Protocol</a></li>
+              <li><Link to={isHome ? '#overview' : '/#overview'} className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Philosophy</Link></li>
+              <li><Link to={isHome ? '#why-us' : '/#why-us'} className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Values</Link></li>
+              <li><Link to={isHome ? '#culture' : '/#culture'} className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Protocol</Link></li>
             </ul>
           </div>
 
@@ -44,15 +44,15 @@ const Footer = () => {
             <h4 className="font-sans font-bold text-lg mb-6 text-white tracking-wide">Careers</h4>
             <ul className="space-y-4 font-sans text-slate-400 text-sm">
               <li><Link to="/roles" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Open Positions</Link></li>
-              <li><a href="/roles#apply" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Apply</a></li>
+              <li><Link to="/roles#apply" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Apply</Link></li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
             <h4 className="font-sans font-bold text-lg mb-6 text-white tracking-wide">Legal</h4>
             <ul className="space-y-4 font-sans text-slate-400 text-sm">
-              <li><a href="#" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Terms of Service</a></li>
+              <li><Link to="#" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Privacy Policy</Link></li>
+              <li><Link to="#" className="hover:text-brand-red transition-colors flex items-center gap-2 group"><span className="w-0 group-hover:w-2 h-px bg-brand-red transition-all"></span>Terms of Service</Link></li>
             </ul>
           </div>
         </div>

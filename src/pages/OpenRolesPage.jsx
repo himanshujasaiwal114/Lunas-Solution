@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Turnstile } from '@marsidev/react-turnstile';
 import gsap from 'gsap';
 import { ChevronDown, ArrowUpRight, MapPin, Clock, Upload, Send, ShieldCheck, Database, Zap } from 'lucide-react';
 import Header from '../components/Header';
@@ -9,6 +10,78 @@ import Benefits from '../components/Benefits';
 const OpenRolesPage = () => {
   const containerRef = useRef(null);
   const [expandedRole, setExpandedRole] = useState(null);
+  
+  const turnstileRef = useRef(null);
+  const [turnstileToken, setTurnstileToken] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [fileName, setFileName] = useState('');
+
+  const fileToBase64 = (f) => new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(r.result.split(",")[1]);
+    r.onerror = reject;
+    r.readAsDataURL(f);
+  });
+
+  const submit = async (e) => {
+    e.preventDefault();
+    if (!turnstileToken) {
+      setErrorMessage("Please verify that you are human.");
+      return;
+    }
+    
+    setErrorMessage('');
+    setIsSubmitting(true);
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const file = formData.get('attachment');
+    let attachment;
+    
+    if (file && file.name) {
+      if (file.size > 3 * 1024 * 1024) {
+        setErrorMessage("File too large (max 3MB).");
+        setIsSubmitting(false);
+        return;
+      }
+      const content_base64 = await fileToBase64(file);
+      attachment = { filename: file.name, content_type: file.type, content_base64 };
+    }
+    
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          fields: [
+            { label: "Name", value: formData.get('name') },
+            { label: "Email", value: formData.get('email') },
+            { label: "Phone", value: formData.get('phone') },
+            { label: "Role", value: formData.get('role') },
+          ],
+          reply_to: formData.get('email'),
+          attachment,
+          token: turnstileToken,
+        }),
+      });
+
+      if (!res.ok) { 
+        setSubmitStatus('error');
+        setErrorMessage("Application transmission failed. Please try again.");
+      } else { 
+        setSubmitStatus('success'); 
+      }
+    } catch (err) {
+      setSubmitStatus('error');
+      setErrorMessage("Network error occurred.");
+    } finally {
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     // Scroll to top when mounting new page
@@ -265,63 +338,82 @@ const OpenRolesPage = () => {
                   <p className="font-serif text-slate-500 italic text-xl">Ready to align your expertise with our precision operations? Construct your application payload below.</p>
                 </div>
                 
-                <form action="https://formsubmit.co/LunasRecruitmentTeam@lunas.com.ph" method="POST" encType="multipart/form-data" className="relative z-10 space-y-8 max-w-3xl mx-auto">
-                  {/* Honeypot for spam protection */}
-                  <input type="text" name="_honey" style={{ display: 'none' }} />
-                  {/* Disable captcha for smoother UX */}
-                  <input type="hidden" name="_captcha" value="false" />
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-3">
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Full Name</label>
-                      <input type="text" name="name" required placeholder="Jane Doe" className="w-full bg-slate-50 rounded-2xl px-6 py-5 text-base text-slate-800 outline-none border border-slate-200 focus:border-brand-red focus:bg-white transition-all shadow-sm placeholder-slate-400" />
+                {submitStatus === 'success' ? (
+                  <div className="relative z-10 max-w-2xl mx-auto text-center space-y-6 py-12">
+                    <div className="w-24 h-24 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-brand-blue/20">
+                      <ShieldCheck size={48} className="text-brand-blue" />
                     </div>
-                    <div className="space-y-3">
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Email Address</label>
-                      <input type="email" name="email" required placeholder="jane@example.com" className="w-full bg-slate-50 rounded-2xl px-6 py-5 text-base text-slate-800 outline-none border border-slate-200 focus:border-brand-red focus:bg-white transition-all shadow-sm placeholder-slate-400" />
-                    </div>
+                    <h4 className="font-sans font-bold text-3xl text-brand-navy">Payload Transmitted</h4>
+                    <p className="text-slate-600 text-lg">Your application has been received successfully. Our team will review your dossier and be in touch.</p>
                   </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-3">
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Phone Number</label>
-                      <input type="tel" name="phone" required placeholder="+1 (555) 000-0000" className="w-full bg-slate-50 rounded-2xl px-6 py-5 text-base text-slate-800 outline-none border border-slate-200 focus:border-brand-red focus:bg-white transition-all shadow-sm placeholder-slate-400" />
-                    </div>
-                    <div className="space-y-3">
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Target Modality (Role)</label>
-                      <div className="relative">
-                        <select name="role" required className="w-full bg-slate-50 rounded-2xl px-6 py-5 text-base outline-none border border-slate-200 focus:border-brand-red focus:bg-white transition-all appearance-none cursor-pointer shadow-sm text-slate-800" defaultValue="">
-                          <option value="" disabled className="text-slate-400">Select operational alignment...</option>
-                          {roles.map(r => <option key={r.id} value={r.title}>{r.title}</option>)}
-                          <option value="General Consideration Registry">General Consideration Registry</option>
-                        </select>
-                        <ChevronDown size={20} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                ) : (
+                  <form onSubmit={submit} className="relative z-10 space-y-8 max-w-3xl mx-auto">
+                    {submitStatus === 'error' && (
+                      <div className="bg-red-50 text-red-600 border border-red-200 p-4 rounded-xl text-center text-sm font-bold">
+                        {errorMessage}
+                      </div>
+                    )}
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Full Name</label>
+                        <input type="text" name="name" required disabled={isSubmitting} placeholder="Jane Doe" className="w-full bg-slate-50 rounded-2xl px-6 py-5 text-base text-slate-800 outline-none border border-slate-200 focus:border-brand-red focus:bg-white transition-all shadow-sm placeholder-slate-400 disabled:opacity-50" />
+                      </div>
+                      <div className="space-y-3">
+                        <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Email Address</label>
+                        <input type="email" name="email" required disabled={isSubmitting} placeholder="jane@example.com" className="w-full bg-slate-50 rounded-2xl px-6 py-5 text-base text-slate-800 outline-none border border-slate-200 focus:border-brand-red focus:bg-white transition-all shadow-sm placeholder-slate-400 disabled:opacity-50" />
                       </div>
                     </div>
-                  </div>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Phone Number</label>
+                        <input type="tel" name="phone" required disabled={isSubmitting} placeholder="+1 (555) 000-0000" className="w-full bg-slate-50 rounded-2xl px-6 py-5 text-base text-slate-800 outline-none border border-slate-200 focus:border-brand-red focus:bg-white transition-all shadow-sm placeholder-slate-400 disabled:opacity-50" />
+                      </div>
+                      <div className="space-y-3">
+                        <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Target Modality (Role)</label>
+                        <div className="relative">
+                          <select name="role" required disabled={isSubmitting} className="w-full bg-slate-50 rounded-2xl px-6 py-5 text-base outline-none border border-slate-200 focus:border-brand-red focus:bg-white transition-all appearance-none cursor-pointer shadow-sm text-slate-800 disabled:opacity-50" defaultValue="">
+                            <option value="" disabled className="text-slate-400">Select operational alignment...</option>
+                            {roles.map(r => <option key={r.id} value={r.title}>{r.title}</option>)}
+                            <option value="General Consideration Registry">General Consideration Registry</option>
+                          </select>
+                          <ChevronDown size={20} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                        </div>
+                      </div>
+                    </div>
 
-                  <div className="space-y-3">
-                    <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Curriculum Vitae / Dossier</label>
-                    <label htmlFor="resume-upload" className="w-full block bg-slate-50 rounded-2xl border border-dashed border-slate-300 hover:border-brand-red hover:bg-slate-100 transition-all cursor-pointer p-10 flex flex-col items-center justify-center gap-4 group">
-                      <input id="resume-upload" type="file" name="attachment" accept=".pdf,.doc,.docx" className="hidden" required />
-                      <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:text-brand-red transition-all duration-500 text-slate-400">
-                        <Upload className="w-6 h-6" />
-                      </div>
-                      <div className="text-center">
-                        <span className="text-brand-navy font-bold text-base block mb-2">Initialize Payload Upload</span>
-                        <p className="text-sm text-slate-500 font-serif italic">PDF, DOCX format parameters limit: 5MB</p>
-                      </div>
-                    </label>
-                  </div>
+                    <div className="space-y-3">
+                      <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-2">Curriculum Vitae / Dossier</label>
+                      <label htmlFor="resume-upload" className="w-full block bg-slate-50 rounded-2xl border border-dashed border-slate-300 hover:border-brand-red hover:bg-slate-100 transition-all cursor-pointer p-10 flex flex-col items-center justify-center gap-4 group">
+                        <input id="resume-upload" type="file" name="attachment" disabled={isSubmitting} accept=".pdf,.doc,.docx" className="hidden" required onChange={(e) => setFileName(e.target.files[0]?.name || '')} />
+                        <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:text-brand-red transition-all duration-500 text-slate-400">
+                          <Upload className="w-6 h-6" />
+                        </div>
+                        <div className="text-center">
+                          <span className="text-brand-navy font-bold text-base block mb-2">{fileName ? fileName : 'Initialize Payload Upload'}</span>
+                          <p className={`text-sm font-serif italic ${errorMessage.includes('too large') ? 'text-red-500 font-bold' : 'text-slate-500'}`}>PDF, DOCX format parameters limit: 3MB</p>
+                        </div>
+                      </label>
+                    </div>
 
-                  <div className="pt-8">
-                    <button type="submit" className="magnetic-btn w-full flex items-center justify-center gap-3 py-6 rounded-2xl font-bold bg-brand-navy text-white hover:bg-brand-red transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-brand-red/30 text-lg">
-                      Submit
-                      <ArrowUpRight size={20} />
-                    </button>
-                    <p className="text-center text-[10px] text-slate-500 mt-6 font-mono uppercase tracking-widest">System transmits directly to recruiting infrastructure.</p>
-                  </div>
-                </form>
+                    <div className="flex justify-center pt-4">
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey="0x4AAAAAAC-FkqHABHvGV29o"
+                        onSuccess={setTurnstileToken}
+                        onExpire={() => setTurnstileToken(null)}
+                      />
+                    </div>
+
+                    <div className="pt-8">
+                      <button type="submit" disabled={isSubmitting || !turnstileToken} className="magnetic-btn w-full flex items-center justify-center gap-3 py-6 rounded-2xl font-bold bg-brand-navy text-white hover:bg-brand-red transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-brand-red/30 text-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                        {isSubmitting ? 'Transmitting...' : 'Submit'}
+                        <ArrowUpRight size={20} />
+                      </button>
+                      <p className="text-center text-[10px] text-slate-500 mt-6 font-mono uppercase tracking-widest">System transmits directly to recruiting infrastructure.</p>
+                    </div>
+                  </form>
+                )}
               </div>
 
             </div>
